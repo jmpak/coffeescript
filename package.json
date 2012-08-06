@@ -1,0 +1,12 @@
+{
+  "name": "mocha-test",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "coffee-script": "~1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --compilers coffee:coffee-script"
+  }
+}
