@@ -5,8 +5,11 @@
     beforeEach(function() {
       return this.dish = new Dish('Sirloin Steak $18.99 mains');
     });
-    return it("extracts title", function() {
+    it("extracts title", function() {
       return expect(this.dish.title).toEqual('Sirloin Steak');
+    });
+    return it("extracts price", function() {
+      return expect(this.dish.price).toEqual('$18.99');
     });
   });
 
