@@ -12,7 +12,7 @@ window.Dish = class Dish
     r.trim() for r in result
 
 window.Money = class Money
-  constructor: (rawString) ->
+  constructor: (rawString='') ->
     @cents = @parseCents rawString
 
   parseCents: (rawString) ->
@@ -21,3 +21,14 @@ window.Money = class Money
 
   toString: ->
     "$#{Math.floor(@cents / 100)}.#{@cents % 100}"
+
+window.Meal = class Meal
+  constructor: ->
+    @dishes = []
+
+  add: (dishes...) -> @dishes.push dishes...
+
+  totalPrice: ->
+    total = new Money
+    total.cents = total.cents + dish.price.cents for dish in @dishes
+    total
